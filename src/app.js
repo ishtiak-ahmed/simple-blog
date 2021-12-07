@@ -4,6 +4,8 @@ require('dotenv').config({ path: `${__dirname}/../.env` });
 
 const indexRouter = require('./routes');
 const usersRouter = require('./routes/users');
+const categoryRouter = require('./routes/category')
+
 require('./db/db');
 
 const app = express();
@@ -14,5 +16,6 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/category', categoryRouter)
 
 module.exports = app;
